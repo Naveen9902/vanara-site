@@ -1,0 +1,5 @@
+Login link for naveenpagadekalla@gmail.com:
+
+http://localhost:3000/api/auth/callback/email?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F&token=d156bd6080bc964f31677e12d3b38ac882488c0b67671776b3ca83ff16237972&email=naveenpagadekalla%40gmail.com
+
+(Paste this URL into your browser to log in)

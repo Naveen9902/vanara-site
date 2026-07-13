@@ -1,0 +1,5 @@
+Your OTP Code for naveenpagadekalla@gmail.com:
+
+281743
+
+(Note: To actually send this via email, you must add your Gmail App Password to the .env file!)
