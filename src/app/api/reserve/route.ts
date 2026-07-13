@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     // Check 1-order limit
     const existingOrder = await prisma.reservation.findFirst({
-      where: { userId: session.user.id }
+      where: { userId: (session.user as any).id }
     });
 
     if (existingOrder) {
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         name: session.user.name || "Customer",
         email: session.user.email,
         total,
-        userId: session.user.id,
+        userId: (session.user as any).id,
         paymentMethod: paymentMethod || null,
         transactionId: transactionId || null,
         items: {
