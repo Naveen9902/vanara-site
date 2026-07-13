@@ -67,8 +67,10 @@ export async function POST(request: Request) {
       console.log(`Code: ${otp}`);
       console.log('---------------------------------------------------------');
       
-      // Write to a file so the user can easily see it!
-      fs.writeFileSync(path.join(process.cwd(), "otp.txt"), `Your OTP Code for ${normalizedEmail}:\n\n${otp}\n\n(Note: To actually send this via email, you must add your Gmail App Password to the .env file!)`);
+      // Write to a file so the user can easily see it locally!
+      if (process.env.NODE_ENV !== 'production') {
+        fs.writeFileSync(path.join(process.cwd(), "otp.txt"), `Your OTP Code for ${normalizedEmail}:\n\n${otp}\n\n(Note: To actually send this via email, you must add your Gmail App Password to the .env file!)`);
+      }
     }
 
     return NextResponse.json({ success: true });
