@@ -57,6 +57,11 @@ export async function POST(request: Request) {
       `,
     };
 
+    if (process.env.NODE_ENV === 'production' && !process.env.EMAIL_SERVER_PASSWORD) {
+      console.error("FATAL: EMAIL_SERVER_PASSWORD is not set in Vercel Environment Variables.");
+      return NextResponse.json({ error: 'Server misconfiguration: Email password missing in Vercel' }, { status: 500 });
+    }
+
     if (process.env.EMAIL_SERVER_PASSWORD) {
       await transporter.sendMail(mailOptions);
     } else {
