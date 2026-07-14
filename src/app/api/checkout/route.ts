@@ -5,7 +5,7 @@ import Stripe from 'stripe';
 
 // Initialize Stripe (will throw if key is missing, but we handle it gracefully if undefined)
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
-  apiVersion: '2025-01-27.acacia',
+  apiVersion: '2026-06-24.dahlia',
 });
 
 export async function POST(request: Request) {
