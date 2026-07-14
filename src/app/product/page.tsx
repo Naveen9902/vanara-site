@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from "@/context/CartContext";
 import { toast } from "sonner";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   "/images/baiji.jpg",
@@ -67,6 +68,16 @@ export default function Product() {
     openCart();
   };
 
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveView((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveView((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="va-view active">
       <section className="va-section" style={{ paddingTop: '8vh' }}>
@@ -75,21 +86,43 @@ export default function Product() {
           <div>
             <div 
               className="va-gallery-main" 
-              style={{ padding: 0, overflow: 'hidden', cursor: 'zoom-in' }}
+              style={{ padding: 0, overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
               onClick={() => setIsLightboxOpen(true)}
             >
-              <img 
-                src={images[activeView]} 
-                alt={`Product View ${activeView + 1}`} 
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: activeView === 0 ? 'contain' : 'cover', 
-                  backgroundColor: activeView === 0 ? '#cedbea' : 'transparent' 
-                }} 
-              />
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={activeView}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  src={images[activeView]} 
+                  alt={`Product View ${activeView + 1}`} 
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: activeView === 0 ? 'contain' : 'cover', 
+                    backgroundColor: activeView === 0 ? '#cedbea' : 'transparent' 
+                  }} 
+                />
+              </AnimatePresence>
+              
+              <button 
+                onClick={handlePrevImage}
+                style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.4)', color: '#fff', border: 'none', width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', zIndex: 10 }}
+              >
+                &#8249;
+              </button>
+              
+              <button 
+                onClick={handleNextImage}
+                style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.4)', color: '#fff', border: 'none', width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', zIndex: 10 }}
+              >
+                &#8250;
+              </button>
+
               {activeView === 0 && (
-                <div className="num" style={{ position: 'absolute', bottom: '16px', right: '16px', color: '#111', background: 'rgba(255,255,255,0.7)', padding: '4px 8px', borderRadius: '4px' }}>
+                <div className="num" style={{ position: 'absolute', bottom: '16px', right: '16px', color: '#111', background: 'rgba(255,255,255,0.7)', padding: '4px 8px', borderRadius: '4px', zIndex: 5 }}>
                   Selected: No. <span>{selectedNum ? selectedNum.padStart(3, '0') : '...'}</span> / 200
                 </div>
               )}
