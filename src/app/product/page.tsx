@@ -94,7 +94,7 @@ export default function Product() {
     setIsTriviaOpen(false);
     if (!selectedSize) return;
     addToCart({ size: selectedSize, num: selectedNum, price });
-    toast.success('Added to your reservation bag.');
+    toast.success('Added to your reservation bag.', { duration: 1000 });
     openCart();
   };
 

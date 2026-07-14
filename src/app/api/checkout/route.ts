@@ -12,9 +12,10 @@ const razorpay = new Razorpay({
 export async function POST(request: Request) {
   try {
     const session = await auth();
-    if (!session || !session.user || !session.user.email) {
-      return NextResponse.json({ error: 'You must be logged in to reserve.' }, { status: 401 });
+    if (!session || !session.user || !session.user.email || !(session.user as any).id) {
+      return NextResponse.json({ error: 'You must be fully logged in (missing user ID). Please log out and back in.' }, { status: 401 });
     }
+    const userId = String((session.user as any).id);
 
     const { cartItems } = await request.json();
 
@@ -24,7 +25,7 @@ export async function POST(request: Request) {
 
     // Enforce 1 reservation limit per user
     const existingOrder = await prisma.reservation.findFirst({
-      where: { userId: (session.user as any).id }
+      where: { userId: userId }
     });
 
     if (existingOrder) {
@@ -53,8 +54,8 @@ export async function POST(request: Request) {
       },
       reminder_enable: false,
       notes: {
-        userId: (session.user as any).id,
-        cartPayload: JSON.stringify(cartItems)
+        userId: userId,
+        cartPayload: JSON.stringify(cartItems).substring(0, 250) // Ensure it doesn't exceed 255 chars
       },
       callback_url: `${origin}/success`,
       callback_method: 'get'
@@ -63,6 +64,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ url: paymentLink.short_url });
   } catch (error: any) {
     console.error('Razorpay Checkout Error:', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+    const msg = error?.error?.description || error?.message || 'Unknown Razorpay Error';
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
