@@ -13,9 +13,6 @@ export default function CartDrawer() {
   const [loading, setLoading] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
-  // Payment State
-  const [upiId, setUpiId] = useState("");
-
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   const advancePerItem = 10;
   const advanceTotal = cart.length * advancePerItem;
@@ -27,42 +24,29 @@ export default function CartDrawer() {
       return;
     }
 
-    if (cart.length > 0) {
-      if (!upiId) {
-        setMsg("Please enter the Transaction ID to verify your payment.");
-        return;
-      }
-    }
+    if (cart.length === 0) return;
     
     setLoading(true);
     setMsg("");
 
-    // Simulate Payment Processing
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
     try {
-      const res = await fetch('/api/reserve', {
+      const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cartItems: cart, paymentMethod: 'upi', transactionId: upiId })
+        body: JSON.stringify({ cartItems: cart })
       });
       
       const data = await res.json();
 
-      if (res.ok) {
-        setMsg(`Payment successful! Reservation secured for ${session.user?.email}.`);
-        setTimeout(() => {
-          clearCart();
-          setMsg("");
-          setUpiId("");
-          closeCart();
-        }, 3000);
+      if (res.ok && data.url) {
+        // Redirect to Stripe Checkout
+        window.location.href = data.url;
       } else {
-        setMsg(data.error || "Something went wrong with your reservation.");
+        setMsg(data.error || "Failed to initialize secure checkout.");
+        setLoading(false);
       }
     } catch (err) {
       setMsg("Network error. Please try again.");
-    } finally {
       setLoading(false);
     }
   };
@@ -97,29 +81,10 @@ export default function CartDrawer() {
           <div className="va-drawer-foot">
             {session && (
               <div style={{ marginBottom: '24px', paddingTop: '16px', borderTop: '1px solid var(--line-soft)' }}>
-                <h4 className="serif" style={{ fontSize: '15px', marginBottom: '12px', color: 'var(--bone)' }}>Secure Reservation</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center', background: 'var(--bg-panel-2)', padding: '16px', border: '1px solid var(--line)' }}>
-                  <div style={{ textAlign: 'center', fontSize: '12px', color: 'var(--bone)' }}>
-                    Scan to pay <strong>$10 (~₹850) Advance</strong>
-                  </div>
-                  <img 
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=9380465969@ptyes%26pn=Vanara%26am=850%26cu=INR`} 
-                    alt="UPI QR Code" 
-                    style={{ borderRadius: '8px', border: '4px solid #fff' }}
-                  />
-                  <div style={{ textAlign: 'center', fontSize: '11px', color: 'var(--bone-dim)' }}>
-                    Or pay manually to VPA:<br/>
-                    <strong style={{ color: 'var(--river)', fontSize: '13px' }}>9380465969@ptyes</strong>
-                  </div>
-                  <input 
-                    type="text" 
-                    placeholder="Enter 12-digit UTR / Transaction ID" 
-                    value={upiId}
-                    onChange={(e) => setUpiId(e.target.value)}
-                    disabled={loading}
-                    style={{ width: '100%', background: 'var(--bg-deep)', border: '1px solid var(--line)', padding: '10px 12px', color: 'var(--bone)', fontSize: '13px', outline: 'none', textAlign: 'center' }}
-                  />
-                </div>
+                <h4 className="serif" style={{ fontSize: '15px', marginBottom: '8px', color: 'var(--bone)' }}>Secure Reservation</h4>
+                <p style={{ fontSize: '12px', color: 'var(--bone-dim)', lineHeight: '1.5' }}>
+                  You are making an advance payment to secure your piece. The balance will be requested prior to shipping. Payments are encrypted and processed securely by <strong>Stripe</strong>.
+                </p>
               </div>
             )}
             
