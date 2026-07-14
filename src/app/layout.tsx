@@ -1,44 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
 import Navigation from "@/components/Navigation";
-import Announcement from "@/components/Announcement";
 import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
-import Providers from "@/components/Providers";
-
 import { Toaster } from 'sonner';
-import { Analytics } from '@vercel/analytics/react';
-
-const newsreader = Newsreader({ subsets: ["latin"], weight: ["400", "500"] });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"] });
-const plexSans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 export const metadata: Metadata = {
-  title: "VANARA | Field Records",
-  description: "A numbered record of species the world let vanish. Hand-stamped, highly limited editions.",
-  openGraph: {
-    title: "VANARA | Field Records",
-    description: "A numbered record of species the world let vanish. Limited run — 200 pairs, never repeated.",
-    url: "https://vanara-site.vercel.app",
-    siteName: "VANARA",
-    images: [
-      {
-        url: "https://vanara-site.vercel.app/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "VANARA Sneaker Release"
-      }
-    ],
-    locale: "en_US",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "VANARA | Field Records",
-    description: "A numbered record of species the world let vanish.",
-    images: ["https://vanara-site.vercel.app/og-image.jpg"],
-  }
+  title: "VANARA",
+  description: "A numbered record of species the world let vanish. Hand-stamped limited editions.",
 };
 
 export default function RootLayout({

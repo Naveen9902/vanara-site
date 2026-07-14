@@ -166,7 +166,7 @@ export default function Product() {
           </div>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <div className="va-section-label" style={{ marginBottom: 0 }}>Field Record No. 01</div>
+              <div className="va-section-label" style={{ marginBottom: 0 }}>Edition No. 01</div>
               {!loadingBooked && (
                 <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: 'var(--brick)', border: '1px solid rgba(169, 80, 62, 0.3)', padding: '4px 8px', borderRadius: '4px', background: 'rgba(169, 80, 62, 0.1)' }}>
                   {200 - bookedNums.length} of 200 remain

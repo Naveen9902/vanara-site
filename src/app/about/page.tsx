@@ -11,7 +11,6 @@ export default function AboutPage() {
       <div style={{ maxWidth: '800px', width: '100%' }}>
         <h1 className="serif" style={{ fontSize: 'clamp(32px, 6vw, 48px)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>VANARA</h1>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '13px', color: 'var(--river)', letterSpacing: '0.2em', marginBottom: '40px' }}>
-          F I E L D &nbsp;&nbsp; R E C O R D S<br/>
           <span style={{ color: 'var(--bone-dim)', letterSpacing: '0.1em' }}>Company Profile</span>
         </div>
         
@@ -24,7 +23,7 @@ export default function AboutPage() {
               Vanara is a footwear label built around a single idea: some things exist only once. Every release is named for a species the world has lost, produced in one numbered run, and never remade. Each pair is hand-stamped with its edition number, turning a sneaker into a small, permanent record of something that can no longer be replaced.
             </p>
             <p style={{ color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7' }}>
-              The brand's debut release, Field Record No. 01 — The Baiji Edition, is limited to 200 numbered pairs worldwide, named for the Yangtze River dolphin declared functionally extinct in 2006.
+              The brand's debut release, The Baiji Edition, is limited to 200 numbered pairs worldwide, named for the Yangtze River dolphin declared functionally extinct in 2006.
             </p>
           </section>
 
@@ -36,7 +35,7 @@ export default function AboutPage() {
               <div style={{ color: 'var(--bone)' }}>Naveen Pagadekalla</div>
               
               <div style={{ color: 'var(--bone-dim)' }}>Business</div>
-              <div style={{ color: 'var(--bone)' }}>Vanara — Field Records</div>
+              <div style={{ color: 'var(--bone)' }}>Vanara</div>
               
               <div style={{ color: 'var(--bone-dim)' }}>Location</div>
               <div style={{ color: 'var(--bone)' }}>Bengaluru, Karnataka, India</div>
@@ -78,7 +77,7 @@ export default function AboutPage() {
               <li>Secure, PCI-compliant checkout with encrypted payments.</li>
               <li>Worldwide shipping, tracked and insured.</li>
               <li>Authenticated numbering — 1 of 200 per edition.</li>
-              <li>Waitlist access for upcoming Field Record releases.</li>
+              <li>Waitlist access for upcoming releases.</li>
             </ul>
           </section>
 
@@ -86,7 +85,7 @@ export default function AboutPage() {
           <section style={{ borderTop: '1px solid var(--line-soft)', paddingTop: '40px' }}>
             <h2 className="serif" style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--bone)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vision Forward</h2>
             <p style={{ color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7' }}>
-              As Vanara grows, each new Field Record will document a different species and a different chapter of loss — building, over time, a physical archive worn on people's feet rather than kept behind glass. The long-term goal is a recognizable, story-led collectible brand with a genuine conservation footprint, not just a marketing angle.
+              As Vanara grows, each new release will document a different species and a different chapter of loss — building, over time, a physical archive worn on people's feet rather than kept behind glass. The long-term goal is a recognizable, story-led collectible brand with a genuine conservation footprint, not just a marketing angle.
             </p>
           </section>
 

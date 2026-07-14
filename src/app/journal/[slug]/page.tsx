@@ -10,7 +10,7 @@ export default function JournalPost({ params }: { params: { slug: string } }) {
           date: 'Aug 14, 2026',
           content: [
             "Declared functionally extinct in 2006, the Yangtze River Dolphin was a casualty of rapid industrialization. For millions of years, they navigated the murky waters of the Yangtze using sophisticated echolocation. But as the river became a massive artery for trade, the noise of engines blinded them. Nets drowned them. Pollution poisoned them.",
-            "We dedicate our first Field Record to the Baiji because it represents the silent cost of our modern convenience. When we decided to launch Vanara, we knew our first silhouette had to carry this weight.",
+            "We dedicate our first edition to the Baiji because it represents the silent cost of our modern convenience. When we decided to launch Vanara, we knew our first silhouette had to carry this weight.",
             "The shoe's colorway—a stark bone white against a pale river blue—mirrors the dolphin's own colors. But we didn't just want a tribute in color. We etched a topographic map of a 50-mile stretch of the Yangtze into the midsole. It's a subtle detail, something only the wearer will know is there, a private reminder of what was lost.",
             "By wearing this piece, you carry the record forward."
           ]
@@ -21,7 +21,7 @@ export default function JournalPost({ params }: { params: { slug: string } }) {
           date: 'Aug 02, 2026',
           content: [
             "Mass production removes the soul from footwear. When a factory pumps out two million pairs of a sneaker, the product becomes entirely divorced from the people who made it.",
-            "At Vanara, we believe that true luxury lies in the imperfect, human touch. That is why every single pair of our Field Records is hand-stamped with its unique edition number in our studio.",
+            "At Vanara, we believe that true luxury lies in the imperfect, human touch. That is why every single pair of our editions is hand-stamped with its unique edition number in our studio.",
             "When you see 'No. 014 / 200' stamped on the inner tag of your shoe, you know that a human being aligned the stamp, pressed it into the fabric, and verified it. We document this process because transparency is the foundation of trust. We don't just claim our shoes are limited; we physically guarantee it on every pair we ship out.",
             "It is a tedious process. It doesn't scale. And that is exactly why we do it."
           ]

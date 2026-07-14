@@ -7,16 +7,16 @@ export default function Shop() {
 
   return (
     <div className="va-view active">
-      <section className="va-section" style={{ paddingTop: '8vh' }}>
-        <div className="va-section-label">Field Records</div>
-        <h2 className="serif" style={{ fontSize: 'clamp(24px,3vw,32px)' }}>One species at a time.</h2>
+      <section className="va-section" style={{ paddingTop: '8vh', minHeight: '80vh' }}>
+        <h1 className="serif" style={{ fontSize: 'clamp(28px, 4vw, 38px)', marginBottom: '8px' }}>Available Editions</h1>
+        <p style={{ color: 'var(--bone-dim)', fontSize: '14px', marginBottom: '40px' }}>Each piece is strictly limited to 200 pairs. We do not restock.</p>
         <div className="va-shop-grid">
           <div className="va-pcard" onClick={() => router.push('/product')}>
             <div className="va-pcard-art" style={{ padding: 0, overflow: 'hidden' }}>
               <img src="/images/baiji.jpg" alt="The Baiji Edition" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div className="va-pcard-body">
-              <div className="tag">FIELD RECORD NO. 01</div>
+              <div className="tag">EDITION NO. 01</div>
               <h3>The Baiji Edition</h3>
               <p>200 pairs · Bone / River-blue · $228</p>
             </div>
@@ -28,8 +28,8 @@ export default function Shop() {
               </svg>
             </div>
             <div className="va-pcard-body">
-              <div className="tag">FIELD RECORD NO. 02</div>
-              <h3>Unannounced</h3>
+              <div className="tag">EDITION NO. 02</div>
+              <h3>The Thylacine</h3>
               <p>Coming next quarter</p>
             </div>
           </div>
@@ -40,8 +40,8 @@ export default function Shop() {
               </svg>
             </div>
             <div className="va-pcard-body">
-              <div className="tag">FIELD RECORD NO. 03</div>
-              <h3>Unannounced</h3>
+              <div className="tag">EDITION NO. 03</div>
+              <h3>The Ibex</h3>
               <p>Coming next quarter</p>
             </div>
           </div>

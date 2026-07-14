@@ -125,7 +125,7 @@ body ::selection{ background:var(--river-dim); color:var(--bone); }
 .va-story p{ color:var(--bone-dim); font-size:15.5px; max-width:52ch; margin-bottom:16px; }
 .va-story p strong{ color:var(--bone); font-weight:400; }
 .va-card{ border:1px solid var(--line); background:var(--bg-panel); padding:30px 28px; position:relative; }
-.va-card::before{ content:'FIELD RECORD'; position:absolute; top:-10px; left:24px; background:var(--bg-deep); padding:0 8px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; color:var(--bone-dim); }
+.va-card::before{ content:'EDITION'; position:absolute; top:-10px; left:24px; background:var(--bg-deep); padding:0 8px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; color:var(--bone-dim); }
 .va-row{ display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--line-soft); font-family:'IBM Plex Mono',monospace; font-size:12.5px; }
 .va-row:last-child{ border-bottom:none; }
 .va-row span:first-child{ color:var(--bone-dim); }

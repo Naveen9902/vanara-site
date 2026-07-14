@@ -27,7 +27,7 @@ export default function Record() {
             <p>A massive international expedition in 2006 searched the entire river system for six weeks and found absolutely nothing. <strong>No confirmed sighting has been verified since.</strong> The Baiji became the first dolphin species driven to extinction by human activity in recorded history.</p>
             
             <div style={{ marginTop: '48px', padding: '32px', borderLeft: '2px solid var(--river)', background: 'var(--bg-panel-2)', borderRadius: '0 4px 4px 0' }}>
-              <h3 className="serif" style={{ fontSize: '22px', marginBottom: '12px' }}>The First Field Record</h3>
+              <h3 className="serif" style={{ fontSize: '22px', marginBottom: '12px' }}>The First Edition</h3>
               <p style={{ fontSize: '14px', color: 'var(--bone-dim)', marginBottom: '24px', lineHeight: 1.6 }}>
                 Vanara exists to hold a permanent physical record of species like this one. Not as decoration, but as a strictly numbered edition that can never be reissued. 
                 <br/><br/>

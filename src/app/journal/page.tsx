@@ -11,7 +11,7 @@ export default function JournalPage() {
     {
       slug: 'the-story-of-the-baiji',
       title: 'The Story of the Baiji',
-      excerpt: 'Declared functionally extinct in 2006, the Yangtze River Dolphin was a casualty of rapid industrialization. Here is why we dedicated our first Field Record to it.',
+      excerpt: 'Declared functionally extinct in 2006, the Yangtze River Dolphin was a casualty of rapid industrialization. Here is why we dedicated our first edition to it.',
       date: 'Aug 14, 2026',
     },
     {
