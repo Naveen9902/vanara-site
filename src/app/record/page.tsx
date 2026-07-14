@@ -3,10 +3,6 @@ import Link from 'next/link';
 export default function Record() {
   return (
     <div className="va-view active record-view">
-      {/* Immersive Poster (No overlapping text) */}
-      <section style={{ width: '100%', borderBottom: '1px solid var(--line)', backgroundColor: '#050a0a', display: 'flex', justifyContent: 'center' }}>
-        <img src="/images/message.jpg" alt="Wear Memories. Protect Tomorrow." style={{ width: '100%', maxWidth: '1000px', height: 'auto', display: 'block' }} />
-      </section>
 
       {/* Title Section */}
       <section className="va-section" style={{ paddingTop: '60px', paddingBottom: '40px', textAlign: 'center' }}>
@@ -49,6 +45,11 @@ export default function Record() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Immersive Poster (Moved to bottom) */}
+      <section style={{ width: '100%', borderTop: '1px solid var(--line)', backgroundColor: '#050a0a', display: 'flex', justifyContent: 'center' }}>
+        <img src="/images/message.jpg" alt="Wear Memories. Protect Tomorrow." style={{ width: '100%', maxWidth: '1000px', height: 'auto', display: 'block' }} />
       </section>
     </div>
   );
