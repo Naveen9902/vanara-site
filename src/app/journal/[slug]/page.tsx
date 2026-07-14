@@ -36,10 +36,11 @@ export default async function JournalPost({ params }: { params: Promise<{ slug: 
           title: 'OUR MATERIAL PHILOSOPHY',
           date: 'Date pending',
           content: [
-            "A limited-edition sneaker that claims to honor a lost species and then gets built from petroleum-heavy synthetics and unaccountable supply chains would be a contradiction we're not willing to live with. So the materials matter as much as the story.",
-            "Every Vanara upper starts with organic cotton canvas, grown without the synthetic pesticides and fertilizers that strip soil health over time. Our soles use recycled rubber, reclaimed and reprocessed rather than drawn fresh from raw stock — a small way of keeping existing material in circulation instead of extracting more.",
+            "A limited-edition sweatshirt that claims to honor a lost species and then gets built from thin, mass-market fleece would be a contradiction we're not willing to live with. So the materials matter as much as the story.",
+            "Every Vanara piece starts with 100% super combed cotton, woven at 300–350 GSM as a heavyweight French terry — dense enough to hold its shape for years, with soft inner loops that keep it comfortable for all-day wear rather than something you take off after an hour. The fabric is pre-shrunk before cutting, so the fit you buy is the fit that lasts, not one that changes shape after the first wash.",
+            "Every logo is embroidered, not printed — a raised, textured mark that ages the way stitching does rather than the way screen-print cracks and fades. It's a small decision, but it's the same instinct behind everything we make: choose the version that holds up, even if it costs more to produce.",
             "We work with factories we can name, whose labor practices we can describe in specifics rather than vague reassurances — fair wages, safe conditions, and long-term relationships rather than the lowest bid each season. If we can't stand behind how something was made, we don't put our name on it.",
-            "None of this makes a pair of shoes carbon-neutral or perfect — no supply chain is. But it means the choices behind each Edition are ones we're willing to have questioned, in detail, by anyone who asks."
+            "None of this makes a sweatshirt carbon-neutral or perfect — no supply chain is. But it means the choices behind each Edition are ones we're willing to have questioned, in detail, by anyone who asks."
           ]
         };
       default:

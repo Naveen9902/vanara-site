@@ -23,7 +23,7 @@ export default function JournalPage() {
     {
       slug: 'sustainable-materials',
       title: 'OUR MATERIAL PHILOSOPHY',
-      excerpt: 'A limited-edition sneaker that claims to honor a lost species and then gets built from petroleum-heavy synthetics and unaccountable supply chains would be a contradiction we\'re not willing to live with.',
+      excerpt: 'A limited-edition sweatshirt that claims to honor a lost species and then gets built from thin, mass-market fleece would be a contradiction we\'re not willing to live with.',
       date: 'Date pending',
     }
   ];
