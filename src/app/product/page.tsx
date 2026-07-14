@@ -92,6 +92,7 @@ export default function Product() {
 
   const completeTrivia = () => {
     setIsTriviaOpen(false);
+    if (!selectedSize) return;
     addToCart({ size: selectedSize, num: selectedNum, price });
     toast.success('Added to your reservation bag.');
     openCart();
