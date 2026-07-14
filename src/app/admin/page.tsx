@@ -6,7 +6,7 @@ export default async function AdminPage() {
   const session = await auth();
 
   // SECURE ROUTE: Only allow the specific ADMIN_EMAIL to view this page.
-  const adminEmail = process.env.ADMIN_EMAIL;
+  const adminEmail = process.env.ADMIN_EMAIL || "pagadekallnaveen@gmail.com";
   
   if (!session || !session.user || !session.user.email) {
     redirect("/api/auth/signin");
