@@ -3,7 +3,11 @@ import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Announcement from "@/components/Announcement";
+import CartDrawer from "@/components/CartDrawer";
+import Providers from "@/components/Providers";
 import { Toaster } from 'sonner';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "VANARA",
