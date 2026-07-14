@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export default function JournalPost({ params }: { params: { slug: string } }) {
+export default async function JournalPost({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
   const getPost = (slug: string) => {
     switch (slug) {
       case 'the-story-of-the-baiji':
@@ -44,7 +45,7 @@ export default function JournalPost({ params }: { params: { slug: string } }) {
     }
   };
 
-  const post = getPost(params.slug);
+  const post = getPost(resolvedParams.slug);
 
   if (!post) {
     return (
