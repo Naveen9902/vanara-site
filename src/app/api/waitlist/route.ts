@@ -42,7 +42,12 @@ export async function POST(request: Request) {
     };
 
     if (process.env.EMAIL_SERVER_PASSWORD) {
-      await transporter.sendMail(mailOptions);
+      try {
+        await transporter.sendMail(mailOptions);
+      } catch (emailError) {
+        console.error('Failed to send waitlist welcome email:', emailError);
+        // We still return success because they were successfully added to the database
+      }
     }
 
     return NextResponse.json({ success: true, entry });
