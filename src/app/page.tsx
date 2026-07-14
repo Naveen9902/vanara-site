@@ -66,6 +66,29 @@ export default function Home() {
         <div><b>Worldwide shipping</b>Tracked, insured delivery</div>
         <div><b>Giving back</b>10% of profit to conservation</div>
       </motion.div>
+
+      <section className="va-section">
+        <div className="va-section-label">Field Reports</div>
+        <h2 className="serif" style={{ fontSize: 'clamp(28px, 4vw, 42px)', marginBottom: '16px' }}>What early collectors are saying.</h2>
+        
+        <div className="va-testi-grid">
+          <div className="va-testi">
+            <div className="va-stars">★★★★★</div>
+            <p>"The materials are unlike anything I've seen from a mainstream brand. The fact that only 199 other people in the world have these makes them the crown jewel of my collection."</p>
+            <div className="who">MARCUS T. — VERIFIED BUYER</div>
+          </div>
+          <div className="va-testi">
+            <div className="va-stars">★★★★★</div>
+            <p>"I was skeptical of the price until I opened the box. The hand-stamped numbering and the topographic details are immaculate. A true piece of art."</p>
+            <div className="who">ELENA R. — SNEAKERHEADS QUARTERLY</div>
+          </div>
+          <div className="va-testi">
+            <div className="va-stars">★★★★★</div>
+            <p>"Finally a brand that actually cares about the story and the impact. The shoes are incredibly comfortable, but wearing them feels like wearing history."</p>
+            <div className="who">DAVID K. — VERIFIED BUYER</div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

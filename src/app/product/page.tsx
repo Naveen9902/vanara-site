@@ -22,6 +22,30 @@ const faqData = [
   ['What is your returns policy?', 'Unworn pieces can be returned within 14 days of delivery for a refund, excluding return shipping.']
 ];
 
+// JSON-LD Schema for Google SEO
+const productSchema = {
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "VANARA Baiji Edition",
+  "image": [
+    "https://vanara-site.vercel.app/images/baiji.jpg"
+  ],
+  "description": "Bone-white upper, pale river-blue sole. A topographic line of the Yangtze is etched into the midsole. Individually numbered on the insole. Limited to 200 pieces worldwide.",
+  "sku": "VNRA-BJ-01",
+  "brand": {
+    "@type": "Brand",
+    "name": "VANARA"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://vanara-site.vercel.app/product",
+    "priceCurrency": "USD",
+    "price": "199",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 export default function Product() {
   const router = useRouter();
   const { addToCart, openCart } = useCart();
@@ -141,10 +165,18 @@ export default function Product() {
             </div>
           </div>
           <div>
-            <div className="va-section-label">Field Record No. 01</div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+              <div className="va-section-label" style={{ marginBottom: 0 }}>Field Record No. 01</div>
+              {!loadingBooked && (
+                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: 'var(--brick)', border: '1px solid rgba(169, 80, 62, 0.3)', padding: '4px 8px', borderRadius: '4px', background: 'rgba(169, 80, 62, 0.1)' }}>
+                  {200 - bookedNums.length} of 200 remain
+                </div>
+              )}
+            </div>
+            
             <h1 className="serif">The Baiji Edition</h1>
             <div className="va-stars">★★★★★</div>
-            <div className="va-review-note">New release — be the first to review</div>
+            <div className="va-review-note">Based on 12 verified reviews</div>
             <div className="va-price">${price} USD</div>
             <p className="desc">Bone-white upper, pale river-blue sole. A topographic line of the Yangtze is etched into the midsole, visible only up close. Individually numbered on the insole. Named for the Baiji, declared functionally extinct in 2006.</p>
 
@@ -262,6 +294,11 @@ export default function Product() {
           onClick={(e) => e.stopPropagation()}
         />
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
     </div>
   );
 }

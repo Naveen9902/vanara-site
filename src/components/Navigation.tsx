@@ -18,9 +18,8 @@ export default function Navigation() {
       <button className="va-wordmark" onClick={() => router.push('/')}>Vanara</button>
       <div className="va-navlinks">
         <button className={pathname === '/shop' ? 'active' : ''} onClick={() => router.push('/shop')}>Shop</button>
-        <button className={pathname === '/record' ? 'active' : ''} onClick={() => router.push('/record')}>The Record</button>
+        <button className={pathname === '/journal' ? 'active' : ''} onClick={() => router.push('/journal')}>Journal</button>
         <button className={pathname === '/about' ? 'active' : ''} onClick={() => router.push('/about')}>About</button>
-        <button className={pathname === '/waitlist' ? 'active' : ''} onClick={() => router.push('/waitlist')}>Waitlist</button>
       </div>
       <div className="va-nav-right">
         {session ? (

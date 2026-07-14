@@ -98,9 +98,21 @@ export default function CartDrawer() {
               <span>${advanceTotal}</span>
             </div>
             
-            <div className="total" style={{ fontSize: '11px', color: 'var(--bone-dim)', marginBottom: '20px' }}>
+            <div className="total" style={{ fontSize: '11px', color: 'var(--bone-dim)', marginBottom: '16px' }}>
               <span>Balance due prior to shipping</span>
               <span>${balanceTotal}</span>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '16px', opacity: 0.6 }}>
+              {/* Fake Stripe/SSL Badges */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', fontFamily: "'IBM Plex Mono', monospace" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                SSL ENCRYPTED
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', fontFamily: "'IBM Plex Mono', monospace" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                STRIPE SECURE
+              </div>
             </div>
             
             <button className="va-btn primary" style={{ width: '100%' }} onClick={handleSubmit} disabled={loading}>
