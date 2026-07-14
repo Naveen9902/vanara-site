@@ -59,6 +59,7 @@ export default function Product() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isTriviaOpen, setIsTriviaOpen] = useState(false);
 
   useEffect(() => {
     fetch('/api/reservations/booked')
@@ -86,8 +87,12 @@ export default function Product() {
       return;
     }
     
+    setIsTriviaOpen(true);
+  };
+
+  const completeTrivia = () => {
+    setIsTriviaOpen(false);
     addToCart({ size: selectedSize, num: selectedNum, price });
-    
     toast.success('Added to your reservation bag.');
     openCart();
   };
@@ -277,6 +282,22 @@ export default function Product() {
             </tbody>
           </table>
           <button className="va-modal-close" onClick={() => setIsSizeGuideOpen(false)}>Close</button>
+        </div>
+      </div>
+
+      {/* TRIVIA MODAL */}
+      <div className={`va-modal-overlay ${isTriviaOpen ? 'open' : ''}`}>
+        <div className="va-modal" style={{ maxWidth: '400px' }}>
+          <h4 className="serif" style={{ fontSize: '24px', marginBottom: '12px', color: 'var(--river)' }}>Wait. Do you know?</h4>
+          <p style={{ color: 'var(--bone-dim)', fontSize: '15px', lineHeight: 1.6, marginBottom: '24px' }}>
+            Before you reserve, a quick question: What was the primary cause of the Baiji dolphin's extinction?
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <button className="va-btn secondary" onClick={() => toast.error('Incorrect. Climate change was a factor, but not the primary cause.')} style={{ width: '100%' }}>Climate change</button>
+            <button className="va-btn secondary" onClick={completeTrivia} style={{ width: '100%' }}>Industrialization & fishing nets</button>
+            <button className="va-btn secondary" onClick={() => toast.error('Incorrect. Natural predators were not the main issue.')} style={{ width: '100%' }}>Natural predators</button>
+          </div>
+          <button className="va-modal-close" onClick={() => setIsTriviaOpen(false)}>Cancel</button>
         </div>
       </div>
 

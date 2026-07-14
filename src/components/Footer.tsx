@@ -60,6 +60,8 @@ export default function Footer() {
         <div className="va-footer-col">
           <h5>Company</h5>
           <a onClick={() => router.push('/about')}>About Vanara</a>
+          <a onClick={() => router.push('/privacy')}>Privacy policy</a>
+          <a onClick={() => router.push('/terms')}>Terms of service</a>
         </div>
       </div>
       <div className="va-seal-row">
