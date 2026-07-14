@@ -27,7 +27,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="serif" style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--bone)' }}>3. Pricing and Payments</h2>
-            <p>Prices for our products are subject to change without notice. We reserve the right to modify or discontinue the Service without notice at any time. All payments are securely processed by Stripe.</p>
+            <p>Prices for our products are subject to change without notice. We reserve the right to modify or discontinue the Service without notice at any time. All payments are securely processed by Razorpay.</p>
           </section>
 
           <section>

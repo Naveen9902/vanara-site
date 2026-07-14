@@ -1,26 +1,27 @@
 import { redirect } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
-import Stripe from 'stripe';
+import Razorpay from 'razorpay';
 import Link from 'next/link';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
-  apiVersion: '2026-06-24.dahlia',
+const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID || 'rzp_test_placeholder',
+  key_secret: process.env.RAZORPAY_KEY_SECRET || 'secret'
 });
 
 export default async function SuccessPage({
   searchParams,
 }: {
-  searchParams: { session_id?: string };
+  searchParams: { razorpay_payment_link_id?: string };
 }) {
-  const sessionId = searchParams.session_id;
+  const sessionId = searchParams.razorpay_payment_link_id;
 
   if (!sessionId) {
     redirect('/');
   }
 
-  let session: Stripe.Checkout.Session;
+  let session: any;
   try {
-    session = await stripe.checkout.sessions.retrieve(sessionId);
+    session = await razorpay.paymentLink.fetch(sessionId);
   } catch (error) {
     return (
       <main className="va-view active" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh', textAlign: 'center' }}>
@@ -31,7 +32,7 @@ export default async function SuccessPage({
     );
   }
 
-  if (session.payment_status !== 'paid') {
+  if (session.status !== 'paid') {
     return (
       <main className="va-view active" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh', textAlign: 'center' }}>
         <h1 className="serif" style={{ fontSize: '32px', marginBottom: '16px', color: 'var(--brick)' }}>Payment Pending</h1>
@@ -43,9 +44,9 @@ export default async function SuccessPage({
 
   // Payment is successful! 
   // Let's create the reservation if it doesn't already exist for this session.
-  const userId = session.metadata?.userId;
-  const userName = session.metadata?.userName;
-  const cartPayloadStr = session.metadata?.cartPayload;
+  const userId = session.notes?.userId;
+  const userName = session.customer?.name;
+  const cartPayloadStr = session.notes?.cartPayload;
 
   if (!userId || !cartPayloadStr) {
     return (
@@ -56,7 +57,7 @@ export default async function SuccessPage({
     );
   }
 
-  // Check if we already created a reservation for this exact Stripe session (idempotency)
+  // Check if we already created a reservation for this exact Razorpay session (idempotency)
   const existingReservation = await prisma.reservation.findFirst({
     where: { transactionId: sessionId }
   });
@@ -69,11 +70,11 @@ export default async function SuccessPage({
       await prisma.reservation.create({
         data: {
           name: userName || "Customer",
-          email: session.customer_details?.email || "unknown@email.com",
+          email: session.customer?.email || "unknown@email.com",
           total: total,
-          userId: userId,
-          paymentMethod: 'stripe',
-          transactionId: sessionId, // store the stripe session ID to prevent duplicates
+          userId: String(userId),
+          paymentMethod: 'razorpay',
+          transactionId: sessionId, // store the razorpay link ID to prevent duplicates
           items: {
             create: cartItems.map((item: any) => ({
               size: item.size,

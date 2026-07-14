@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7' }}>
           <section>
             <h2 className="serif" style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--bone)' }}>1. Information We Collect</h2>
-            <p>We collect information that you provide directly to us, such as when you create an account, join a waitlist, reserve an edition, or communicate with us. This may include your name, email address, shipping address, and payment information (processed securely by Stripe).</p>
+            <p>We collect information that you provide directly to us, such as when you create an account, join a waitlist, reserve an edition, or communicate with us. This may include your name, email address, shipping address, and payment information (processed securely by Razorpay).</p>
           </section>
 
           <section>
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="serif" style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--bone)' }}>3. Information Sharing</h2>
-            <p>We do not sell your personal information. We share your information only with third-party service providers (like Stripe for payments and shipping carriers) necessary to fulfill your orders and operate our business.</p>
+            <p>We do not sell your personal information. We share your information only with third-party service providers (like Razorpay for payments and shipping carriers) necessary to fulfill your orders and operate our business.</p>
           </section>
 
           <section>

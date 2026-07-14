@@ -39,7 +39,7 @@ export default function CartDrawer() {
       const data = await res.json();
 
       if (res.ok && data.url) {
-        // Redirect to Stripe Checkout
+        // Redirect to Razorpay Checkout
         window.location.href = data.url;
       } else {
         setMsg(data.error || "Failed to initialize secure checkout.");
@@ -83,7 +83,7 @@ export default function CartDrawer() {
               <div style={{ marginBottom: '24px', paddingTop: '16px', borderTop: '1px solid var(--line-soft)' }}>
                 <h4 className="serif" style={{ fontSize: '15px', marginBottom: '8px', color: 'var(--bone)' }}>Secure Reservation</h4>
                 <p style={{ fontSize: '12px', color: 'var(--bone-dim)', lineHeight: '1.5' }}>
-                  You are making an advance payment to secure your piece. The balance will be requested prior to shipping. Payments are encrypted and processed securely by <strong>Stripe</strong>.
+                  You are making an advance payment to secure your piece. The balance will be requested prior to shipping. Payments are encrypted and processed securely by <strong>Razorpay</strong>.
                 </p>
               </div>
             )}
@@ -104,14 +104,14 @@ export default function CartDrawer() {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '16px', opacity: 0.6 }}>
-              {/* Fake Stripe/SSL Badges */}
+              {/* Fake Razorpay/SSL Badges */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', fontFamily: "'IBM Plex Mono', monospace" }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 SSL ENCRYPTED
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', fontFamily: "'IBM Plex Mono', monospace" }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                STRIPE SECURE
+                RAZORPAY SECURE
               </div>
             </div>
             

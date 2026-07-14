@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/prisma';
-import Stripe from 'stripe';
+import Razorpay from 'razorpay';
 
-// Initialize Stripe (will throw if key is missing, but we handle it gracefully if undefined)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder', {
-  apiVersion: '2026-06-24.dahlia',
+// Initialize Razorpay
+const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID || 'rzp_test_placeholder',
+  key_secret: process.env.RAZORPAY_KEY_SECRET || 'secret'
 });
 
 export async function POST(request: Request) {
@@ -36,36 +37,32 @@ export async function POST(request: Request) {
     // The advance is always $10 USD per piece
     const advanceAmount = 10 * 100; // in cents
 
-    const lineItems = cartItems.map((item: any) => ({
-      price_data: {
-        currency: 'usd',
-        product_data: {
-          name: `VANARA Baiji Edition - Size ${item.size} (No. ${item.num}/200)`,
-          description: 'Advance payment to secure reservation. Balance due prior to shipping.',
-        },
-        unit_amount: advanceAmount,
+    // Create Razorpay Payment Link
+    const paymentLink = await razorpay.paymentLink.create({
+      amount: advanceAmount, // in cents/paise
+      currency: 'USD',
+      accept_partial: false,
+      description: `VANARA Baiji Edition - Advance`,
+      customer: {
+        name: session.user.name || "Customer",
+        email: session.user.email,
       },
-      quantity: 1,
-    }));
-
-    // Create Checkout Sessions from body params.
-    const checkoutSession = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: lineItems,
-      mode: 'payment',
-      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/shop`,
-      customer_email: session.user.email,
-      metadata: {
+      notify: {
+        email: true,
+        sms: false
+      },
+      reminder_enable: false,
+      notes: {
         userId: (session.user as any).id,
-        userName: session.user.name || "Customer",
         cartPayload: JSON.stringify(cartItems)
-      }
+      },
+      callback_url: `${origin}/success`,
+      callback_method: 'get'
     });
 
-    return NextResponse.json({ url: checkoutSession.url });
+    return NextResponse.json({ url: paymentLink.short_url });
   } catch (error: any) {
-    console.error('Stripe Checkout Error:', error);
+    console.error('Razorpay Checkout Error:', error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }
