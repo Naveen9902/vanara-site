@@ -56,7 +56,7 @@ export default function EditProfileForm({ initialName, email }: EditProfileFormP
   }
 
   return (
-    <div className="res-items" style={{ marginBottom: '24px', background: 'var(--bg-panel-2)', padding: '16px', borderRadius: '4px', border: '1px solid var(--line)' }}>
+    <div className="res-items edit-form-container" style={{ marginBottom: '24px' }}>
       <div className="va-field" style={{ marginBottom: '16px' }}>
         <label style={{ fontSize: '12px', color: 'var(--bone-dim)', display: 'block', marginBottom: '6px' }}>Full Name</label>
         <input 
@@ -64,7 +64,7 @@ export default function EditProfileForm({ initialName, email }: EditProfileFormP
           value={name} 
           onChange={(e) => setName(e.target.value)} 
           placeholder="Enter your name"
-          style={{ width: '100%', background: 'transparent', border: '1px solid var(--line)', color: 'var(--bone)', padding: '10px 12px', fontSize: '14px', outline: 'none' }}
+          style={{ width: '100%', color: 'var(--bone)', padding: '10px 12px', fontSize: '14px', outline: 'none' }}
           disabled={loading}
           autoFocus
         />

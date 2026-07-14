@@ -57,14 +57,14 @@ export default function EditAddressForm({ initialAddress }: EditAddressFormProps
   }
 
   return (
-    <div className="res-items" style={{ marginTop: '12px', background: 'var(--bg-panel-2)', padding: '16px', borderRadius: '4px', border: '1px solid var(--line)' }}>
+    <div className="res-items edit-form-container" style={{ marginTop: '12px' }}>
       <div className="va-field" style={{ marginBottom: '16px' }}>
         <label style={{ fontSize: '12px', color: 'var(--bone-dim)', display: 'block', marginBottom: '6px' }}>Full Address</label>
         <textarea 
           value={address} 
           onChange={(e) => setAddress(e.target.value)} 
           placeholder="Street address, City, ZIP code, Country..."
-          style={{ width: '100%', background: 'transparent', border: '1px solid var(--line)', color: 'var(--bone)', padding: '10px 12px', fontSize: '14px', outline: 'none', minHeight: '80px', fontFamily: 'inherit' }}
+          style={{ width: '100%', color: 'var(--bone)', padding: '10px 12px', fontSize: '14px', outline: 'none', minHeight: '80px', fontFamily: 'inherit' }}
           disabled={loading}
           autoFocus
         />
