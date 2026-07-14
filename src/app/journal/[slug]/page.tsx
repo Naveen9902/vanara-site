@@ -11,8 +11,11 @@ export default async function JournalPost({ params }: { params: Promise<{ slug: 
           subtitle: 'Lipotes vexillifer, declared functionally extinct, 2006',
           content: [
             "For roughly 20 million years, the baiji swam the Yangtze — a pale, near-blind river dolphin that navigated its murky home almost entirely by sound. It is a possibly extinct species of river dolphin native to the Yangtze river system in China, thought to be the first dolphin species driven to extinction by human activity. In China it carried a gentler name: the \"Goddess of Chang Jiang,\" believed by many to have existed for several million years.",
+            "img:/images/baiji.jpg",
             "The decline was fast, even by the standards of extinction. Before 1950 there were an estimated 6,000 baiji; by the 1980s only around 300 remained. By 1997 a survey found just 13 left, making it the most critically endangered dolphin on Earth. The causes weren't a single event but an accumulation: overfishing that depleted the fish the baiji depended on, destructive fishing methods like electrofishing and gill nets, and a sharp rise in ship traffic on one of the world's busiest rivers. Electric fishing nets alone were estimated to have killed 40% of the baiji population during the 1990s, though starvation from overfishing was the deeper cause, especially for young dolphins learning to catch fish on their own.",
+            "img:/images/baiji-2.jpg",
             "The Yangtze basin is home to roughly 12% of the world's human population, and the rapid economic development along its banks degraded the habitat faster than the species could adapt. The Three Gorges Dam is often cited as the final blow to an ecosystem already pushed past its limit.",
+            "img:/images/baiji-3.jpg",
             "In late 2006, a six-week international expedition surveyed the length of the river. No baiji were detected, and on December 13, 2006, expedition leaders declared the species \"functionally extinct.\" It was formally declared extinct the following year, marking the first extinction of a large aquatic mammal in roughly fifty years — and the loss of an entire ancient family of dolphin, Lipotidae, that the baiji alone represented.",
             "One baiji, a male named Qi Qi, had been rescued by fishermen in 1980 and lived at the Institute of Hydrobiology in Wuhan. He survived in captivity for 22 years, until his death in 2002. He remains the last baiji anyone touched, measured, or truly knew.",
             "Edition No. 01 is numbered 1–200. Each pair carries the mark of an animal that outlasted twenty million years of the natural world, and fewer than fifty of ours."
@@ -74,11 +77,23 @@ export default async function JournalPost({ params }: { params: Promise<{ slug: 
         )}
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          {post.content.map((paragraph, idx) => (
-            <p key={idx} style={{ color: 'var(--bone-dim)', fontSize: '16px', lineHeight: '1.8' }}>
-              {paragraph}
-            </p>
-          ))}
+          {post.content.map((paragraph, idx) => {
+            if (paragraph.startsWith('img:')) {
+              return (
+                <img 
+                  key={idx} 
+                  src={paragraph.replace('img:', '')} 
+                  alt={`${post.title} image`} 
+                  style={{ width: '100%', borderRadius: '8px', marginTop: '16px', marginBottom: '16px', objectFit: 'cover' }} 
+                />
+              );
+            }
+            return (
+              <p key={idx} style={{ color: 'var(--bone-dim)', fontSize: '16px', lineHeight: '1.8' }}>
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
       </div>
     </main>
