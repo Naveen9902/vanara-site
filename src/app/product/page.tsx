@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from "@/context/CartContext";
+import { toast } from "sonner";
 
 const images = [
   "/images/baiji.jpg",
@@ -56,10 +57,13 @@ export default function Product() {
 
   const handleReserve = () => {
     if (!selectedSize) {
-      alert('Please select a size.');
+      toast.error('Please select a size before reserving.');
       return;
     }
+    
     addToCart({ size: selectedSize, num: selectedNum, price });
+    
+    toast.success('Added to your reservation bag.');
     openCart();
   };
 

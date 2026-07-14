@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { toast } from "sonner";
 import { useRouter } from 'next/navigation';
 
 export default function Footer() {
@@ -19,13 +20,13 @@ export default function Footer() {
           body: JSON.stringify({ email })
         });
         if (res.ok) {
-          alert("Mail request accepted! You're on the record.");
+          toast.success("You're on the record.");
           setEmail('');
         } else {
-          alert("Something went wrong. Please try again.");
+          toast.error("Something went wrong. Please try again.");
         }
       } catch (err) {
-        alert("Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.");
       } finally {
         setLoading(false);
       }
