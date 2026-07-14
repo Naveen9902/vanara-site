@@ -27,7 +27,7 @@ export default function Record() {
               <p style={{ fontSize: '14px', color: 'var(--bone-dim)', marginBottom: '24px', lineHeight: 1.6 }}>
                 Vanara exists to hold a permanent physical record of species like this one. Not as decoration, but as a strictly numbered edition that can never be reissued. 
                 <br/><br/>
-                <strong>The Baiji Edition is our first officially announced product.</strong> While it has not yet been released to the general public, our early supporters have the exclusive right to secure their numbered pair before production finishes.
+                <strong>The Baiji Edition is our first officially announced product.</strong> While it has not yet been released to the general public, our early supporters have the exclusive right to secure their numbered piece before production finishes.
               </p>
               <Link href="/product" className="va-btn primary" style={{ display: 'inline-block', textDecoration: 'none', textAlign: 'center' }}>Reserve Your Number</Link>
             </div>

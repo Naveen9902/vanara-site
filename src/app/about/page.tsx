@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Company Profile | VANARA',
-  description: 'Vanara is a footwear label built around a single idea: some things exist only once. Every release is named for a species the world has lost.',
+  description: 'Vanara is an apparel label built around a single idea: some things exist only once. Every release is named for a species the world has lost.',
 };
 
 export default function AboutPage() {
@@ -20,10 +20,10 @@ export default function AboutPage() {
           <section>
             <h2 className="serif" style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--bone)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>About Vanara</h2>
             <p style={{ color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7', marginBottom: '16px' }}>
-              Vanara is a footwear label built around a single idea: some things exist only once. Every release is named for a species the world has lost, produced in one numbered run, and never remade. Each pair is hand-stamped with its edition number, turning a sneaker into a small, permanent record of something that can no longer be replaced.
+              Vanara is an apparel label built around a single idea: some things exist only once. Every release is named for a species the world has lost, produced in one numbered run, and never remade. Each piece is hand-stamped with its edition number, turning a garment into a small, permanent record of something that can no longer be replaced.
             </p>
             <p style={{ color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7' }}>
-              The brand's debut release, The Baiji Edition, is limited to 200 numbered pairs worldwide, named for the Yangtze River dolphin declared functionally extinct in 2006.
+              The brand's debut release, The Baiji Edition, is limited to 200 numbered pieces worldwide, named for the Yangtze River dolphin declared functionally extinct in 2006.
             </p>
           </section>
 
@@ -54,11 +54,11 @@ export default function AboutPage() {
             <ul style={{ color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7', paddingLeft: '20px', marginBottom: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>Numbered, limited editions — each run sold once and never reissued.</li>
               <li>Every model named after an extinct or critically endangered species.</li>
-              <li>Hand-stamped authentication marking each pair's place in its edition.</li>
+              <li>Hand-stamped authentication marking each piece's place in its edition.</li>
               <li>A percentage of profit from every release directed to conservation efforts.</li>
             </ul>
             <p style={{ color: 'var(--bone-dim)', fontSize: '15.5px', lineHeight: '1.7' }}>
-              This positions Vanara less as a conventional sneaker brand and more as a collectible — closer to a limited print or a memorial object than a mass-market shoe. The scarcity is real and permanent: once a run sells out, it is retired for good.
+              This positions Vanara less as a conventional streetwear brand and more as a collectible — closer to a limited print or a memorial object than mass-market clothing. The scarcity is real and permanent: once a run sells out, it is retired for good.
             </p>
           </section>
 

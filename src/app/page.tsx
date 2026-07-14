@@ -23,7 +23,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="va-eyebrow"
         >
-          Limited run — 200 pairs, never repeated
+          Limited run — 200 pieces, never repeated
         </motion.div>
         
         <motion.h1 
@@ -80,11 +80,11 @@ export default function Home() {
           <div className="va-testi">
             <div className="va-stars">★★★★★</div>
             <p>"I was skeptical of the price until I opened the box. The hand-stamped numbering and the topographic details are immaculate. A true piece of art."</p>
-            <div className="who">ELENA R. — SNEAKERHEADS QUARTERLY</div>
+            <div className="who">ELENA R. — STREETWEAR QUARTERLY</div>
           </div>
           <div className="va-testi">
             <div className="va-stars">★★★★★</div>
-            <p>"Finally a brand that actually cares about the story and the impact. The shoes are incredibly comfortable, but wearing them feels like wearing history."</p>
+            <p>"Finally a brand that actually cares about the story and the impact. The sweatshirts are incredibly comfortable, but wearing them feels like wearing history."</p>
             <div className="who">DAVID K. — VERIFIED BUYER</div>
           </div>
         </div>

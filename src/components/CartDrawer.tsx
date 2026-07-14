@@ -61,7 +61,7 @@ export default function CartDrawer() {
         </div>
         <div className="va-drawer-body">
           {cart.length === 0 ? (
-            <div className="va-empty-cart">No pairs reserved yet.</div>
+            <div className="va-empty-cart">No pieces reserved yet.</div>
           ) : (
             cart.map((item, idx) => (
               <div key={idx} className="va-cart-item">

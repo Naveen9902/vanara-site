@@ -101,7 +101,7 @@ export default async function AccountPage() {
               <div className="status-box inactive">
                 <div>
                   <strong>No Reservations</strong>
-                  <p>You haven't secured a pair yet.</p>
+                  <p>You haven't secured a piece yet.</p>
                 </div>
                 <Link href="/shop" className="va-btn secondary small">Go to Shop</Link>
               </div>

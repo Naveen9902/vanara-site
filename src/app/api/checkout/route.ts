@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     // Determine absolute URL for redirect
     const origin = request.headers.get('origin') || 'http://localhost:3000';
 
-    // The advance is always $10 USD per pair
+    // The advance is always $10 USD per piece
     const advanceAmount = 10 * 100; // in cents
 
     const lineItems = cartItems.map((item: any) => ({

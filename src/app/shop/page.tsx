@@ -9,7 +9,7 @@ export default function Shop() {
     <div className="va-view active">
       <section className="va-section" style={{ paddingTop: '8vh', minHeight: '80vh' }}>
         <h1 className="serif" style={{ fontSize: 'clamp(28px, 4vw, 38px)', marginBottom: '8px' }}>Available Editions</h1>
-        <p style={{ color: 'var(--bone-dim)', fontSize: '14px', marginBottom: '40px' }}>Each piece is strictly limited to 200 pairs. We do not restock.</p>
+        <p style={{ color: 'var(--bone-dim)', fontSize: '14px', marginBottom: '40px' }}>Each edition is strictly limited to 200 pieces. We do not restock.</p>
         <div className="va-shop-grid">
           <div className="va-pcard" onClick={() => router.push('/product')}>
             <div className="va-pcard-art" style={{ padding: 0, overflow: 'hidden' }}>
@@ -18,7 +18,7 @@ export default function Shop() {
             <div className="va-pcard-body">
               <div className="tag">EDITION NO. 01</div>
               <h3>The Baiji Edition</h3>
-              <p>200 pairs · Bone / River-blue · $228</p>
+              <p>200 pieces · Bone / River-blue · $228</p>
             </div>
           </div>
           <div className="va-pcard locked">

@@ -69,7 +69,7 @@ export default function Footer() {
             <path d="M20,58 C24,50 30,50 34,54 C38,50 44,50 48,58" fill="none" stroke="#4E6B72" strokeWidth="1.1"/>
             <text x="66" y="50" fontFamily="Newsreader, serif" fontWeight="500" fontSize="30" letterSpacing="4" fill="#0A1417">VANARA</text>
           </svg>
-          <div className="va-seal-caption">Every pair carries this mark, numbered and never reissued.</div>
+          <div className="va-seal-caption">Every piece carries this mark, numbered and never reissued.</div>
         </div>
       </div>
 

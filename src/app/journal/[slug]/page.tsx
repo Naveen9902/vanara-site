@@ -17,7 +17,7 @@ export default async function JournalPost({ params }: { params: Promise<{ slug: 
             "img:/images/baiji-3.jpg",
             "In late 2006, a six-week international expedition surveyed the length of the river. No baiji were detected, and on December 13, 2006, expedition leaders declared the species \"functionally extinct.\" It was formally declared extinct the following year, marking the first extinction of a large aquatic mammal in roughly fifty years — and the loss of an entire ancient family of dolphin, Lipotidae, that the baiji alone represented.",
             "One baiji, a male named Qi Qi, had been rescued by fishermen in 1980 and lived at the Institute of Hydrobiology in Wuhan. He survived in captivity for 22 years, until his death in 2002. He remains the last baiji anyone touched, measured, or truly knew.",
-            "Edition No. 01 is numbered 1–200. Each pair carries the mark of an animal that outlasted twenty million years of the natural world, and fewer than fifty of ours."
+            "Edition No. 01 is numbered 1–200. Each piece carries the mark of an animal that outlasted twenty million years of the natural world, and fewer than fifty of ours."
           ]
         };
       case 'why-we-stamp-every-pair':

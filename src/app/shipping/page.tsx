@@ -32,7 +32,7 @@ export default function ShippingAndReturns() {
 
           <h3 className="serif" style={{ fontSize: '24px', marginBottom: '16px', color: 'var(--bone)' }}>Exchanges</h3>
           <p style={{ fontSize: '16px', color: 'var(--bone-dim)', lineHeight: 1.6, marginBottom: '16px' }}>
-            Because our runs are strictly capped at extremely limited numbers (e.g., 100 pairs total), we generally cannot guarantee size exchanges. If you need a different size, please reach out to us immediately at <a href="mailto:vanaraextinct@gmail.com" style={{ color: 'var(--river)', textDecoration: 'none' }}>vanaraextinct@gmail.com</a>, and we will do our best to accommodate you if stock permits.
+            Because our runs are strictly capped at extremely limited numbers (e.g., 100 pieces total), we generally cannot guarantee size exchanges. If you need a different size, please reach out to us immediately at <a href="mailto:vanaraextinct@gmail.com" style={{ color: 'var(--river)', textDecoration: 'none' }}>vanaraextinct@gmail.com</a>, and we will do our best to accommodate you if stock permits.
           </p>
 
         </div>
