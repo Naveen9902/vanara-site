@@ -1,40 +1,42 @@
 import Link from 'next/link';
 
 export default function JournalPost({ params }: { params: { slug: string } }) {
-  // Mock content for demo purposes
   const getPost = (slug: string) => {
     switch (slug) {
       case 'the-story-of-the-baiji':
         return {
-          title: 'The Story of the Baiji',
+          title: 'EDITION NO. 01 — THE BAIJI',
           date: 'Aug 14, 2026',
+          subtitle: 'Lipotes vexillifer, declared functionally extinct, 2006',
           content: [
-            "Declared functionally extinct in 2006, the Yangtze River Dolphin was a casualty of rapid industrialization. For millions of years, they navigated the murky waters of the Yangtze using sophisticated echolocation. But as the river became a massive artery for trade, the noise of engines blinded them. Nets drowned them. Pollution poisoned them.",
-            "We dedicate our first edition to the Baiji because it represents the silent cost of our modern convenience. When we decided to launch Vanara, we knew our first silhouette had to carry this weight.",
-            "The shoe's colorway—a stark bone white against a pale river blue—mirrors the dolphin's own colors. But we didn't just want a tribute in color. We etched a topographic map of a 50-mile stretch of the Yangtze into the midsole. It's a subtle detail, something only the wearer will know is there, a private reminder of what was lost.",
-            "By wearing this piece, you carry the record forward."
+            "For roughly 20 million years, the baiji swam the Yangtze — a pale, near-blind river dolphin that navigated its murky home almost entirely by sound. It is a possibly extinct species of river dolphin native to the Yangtze river system in China, thought to be the first dolphin species driven to extinction by human activity. In China it carried a gentler name: the \"Goddess of Chang Jiang,\" believed by many to have existed for several million years.",
+            "The decline was fast, even by the standards of extinction. Before 1950 there were an estimated 6,000 baiji; by the 1980s only around 300 remained. By 1997 a survey found just 13 left, making it the most critically endangered dolphin on Earth. The causes weren't a single event but an accumulation: overfishing that depleted the fish the baiji depended on, destructive fishing methods like electrofishing and gill nets, and a sharp rise in ship traffic on one of the world's busiest rivers. Electric fishing nets alone were estimated to have killed 40% of the baiji population during the 1990s, though starvation from overfishing was the deeper cause, especially for young dolphins learning to catch fish on their own.",
+            "The Yangtze basin is home to roughly 12% of the world's human population, and the rapid economic development along its banks degraded the habitat faster than the species could adapt. The Three Gorges Dam is often cited as the final blow to an ecosystem already pushed past its limit.",
+            "In late 2006, a six-week international expedition surveyed the length of the river. No baiji were detected, and on December 13, 2006, expedition leaders declared the species \"functionally extinct.\" It was formally declared extinct the following year, marking the first extinction of a large aquatic mammal in roughly fifty years — and the loss of an entire ancient family of dolphin, Lipotidae, that the baiji alone represented.",
+            "One baiji, a male named Qi Qi, had been rescued by fishermen in 1980 and lived at the Institute of Hydrobiology in Wuhan. He survived in captivity for 22 years, until his death in 2002. He remains the last baiji anyone touched, measured, or truly knew.",
+            "Edition No. 01 is numbered 1–200. Each pair carries the mark of an animal that outlasted twenty million years of the natural world, and fewer than fifty of ours."
           ]
         };
       case 'why-we-stamp-every-pair':
         return {
-          title: 'Why We Hand-Stamp Every Pair',
-          date: 'Aug 02, 2026',
+          title: 'WHY WE HAND-STAMP EVERY PAIR',
+          date: 'Jul 28, 2026',
           content: [
-            "Mass production removes the soul from footwear. When a factory pumps out two million pairs of a sneaker, the product becomes entirely divorced from the people who made it.",
-            "At Vanara, we believe that true luxury lies in the imperfect, human touch. That is why every single pair of our editions is hand-stamped with its unique edition number in our studio.",
-            "When you see 'No. 014 / 200' stamped on the inner tag of your shoe, you know that a human being aligned the stamp, pressed it into the fabric, and verified it. We document this process because transparency is the foundation of trust. We don't just claim our shoes are limited; we physically guarantee it on every pair we ship out.",
-            "It is a tedious process. It doesn't scale. And that is exactly why we do it."
+            "Every Vanara pair leaves the workshop carrying a number, pressed by hand into the sole — not printed, not lasered, not generated by a machine that repeats the same motion a thousand times a day. A person holds the stamp, aligns it, and presses down once. It will never be pressed in quite that way again.",
+            "We do this because mass production solves for consistency, and consistency is the opposite of what we're trying to make. A factory line exists to remove variation — every unit identical, every flaw engineered out. That's the right goal for most things people buy. It's the wrong goal for something meant to mark a loss that can't be repeated.",
+            "The hand-stamp is slower. It's less efficient. Some numbers sit slightly off-center; the pressure varies pair to pair. We don't correct for that — we leave it. A number stamped by a human hand carries the small, unrepeatable imperfections of the hand that stamped it, which feels like the only honest way to mark something that claims to be one of one.",
+            "When your pair arrives, the number on it isn't a SKU. It's a record of a single moment where someone pressed it into the leather and moved on to the next — until 200 became zero, and the run closed for good."
           ]
         };
       case 'sustainable-materials':
         return {
-          title: 'Our Material Philosophy',
-          date: 'Jul 28, 2026',
+          title: 'OUR MATERIAL PHILOSOPHY',
+          date: 'Date pending',
           content: [
-            "You cannot create a product meant to honor nature while simultaneously destroying it. From day one, the hardest part of building Vanara was sourcing the materials.",
-            "We spent eight months visiting factories and suppliers. We rejected dozens of traditional foams and synthetic leathers because their manufacturing processes dumped toxic runoff into local waterways.",
-            "The Baiji Edition uses an organic cotton canvas that requires 71% less water than standard cotton. The river-blue soles are poured using a proprietary blend that incorporates 40% recycled natural rubber, harvested without deforestation.",
-            "We don't believe in fast fashion. We believe in creating durable artifacts that tell a story, built in a way that ensures there are still stories left to tell."
+            "A limited-edition sneaker that claims to honor a lost species and then gets built from petroleum-heavy synthetics and unaccountable supply chains would be a contradiction we're not willing to live with. So the materials matter as much as the story.",
+            "Every Vanara upper starts with organic cotton canvas, grown without the synthetic pesticides and fertilizers that strip soil health over time. Our soles use recycled rubber, reclaimed and reprocessed rather than drawn fresh from raw stock — a small way of keeping existing material in circulation instead of extracting more.",
+            "We work with factories we can name, whose labor practices we can describe in specifics rather than vague reassurances — fair wages, safe conditions, and long-term relationships rather than the lowest bid each season. If we can't stand behind how something was made, we don't put our name on it.",
+            "None of this makes a pair of shoes carbon-neutral or perfect — no supply chain is. But it means the choices behind each Edition are ones we're willing to have questioned, in detail, by anyone who asks."
           ]
         };
       default:
@@ -62,8 +64,14 @@ export default function JournalPost({ params }: { params: { slug: string } }) {
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: 'var(--river)', marginBottom: '16px' }}>
           {post.date}
         </div>
-        <h1 className="serif" style={{ fontSize: 'clamp(32px, 5vw, 48px)', marginBottom: '40px', lineHeight: '1.2' }}>{post.title}</h1>
+        <h1 className="serif" style={{ fontSize: 'clamp(32px, 5vw, 48px)', marginBottom: post.subtitle ? '12px' : '40px', lineHeight: '1.2' }}>{post.title}</h1>
         
+        {post.subtitle && (
+          <div style={{ fontSize: '15px', fontStyle: 'italic', color: 'var(--bone-dim)', marginBottom: '40px' }}>
+            {post.subtitle}
+          </div>
+        )}
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           {post.content.map((paragraph, idx) => (
             <p key={idx} style={{ color: 'var(--bone-dim)', fontSize: '16px', lineHeight: '1.8' }}>
